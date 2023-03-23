@@ -20,7 +20,7 @@ public class Main {
                 mayorSismo = sismos[i];
             }
         }
-        System.out.println(mayorSismo);
+        System.out.println("El mayor sismo fue de: "+mayorSismo);
     }
 
 
