@@ -20,7 +20,11 @@ public class Main {
                 mayorSismo = sismos[i];
             }
         }
-        System.out.println("El mayor sismo fue de: "+mayorSismo);
+        if (mayorSismo==0){
+            System.out.println("aun no se han añadido sismos, por favor primero añada sismos para continuar");
+        }else {
+            System.out.println("El mayor sismo fue de: " + mayorSismo);
+        }
     }
 
 
@@ -30,16 +34,25 @@ public class Main {
             if (sismo >= 5) {
                 cantSismos++;
             }
+            if (cantSismos == 0) {
+                System.out.println("aun no se han añadido sismos, por favor primero añada sismos para continuar");
+                return cantSismos;
+            }
         }
         return cantSismos;
     }
 
 
     public static void mandaSms(double[] sismos) {
+        int cantSms = 0;
         for (double sismo : sismos) {
             if (sismo >= 7) {
                 System.out.println("En estos momentos hay un sismo de gran intensidad (mayor o igual a 7), por lo que debe evacuar lo antes posible");
+                cantSms++;
             }
+        }
+        if (cantSms==0){
+            System.out.println("aun no se han añadido sismos, por favor primero añada sismos para continuar");
         }
     }
 
